@@ -1,0 +1,4 @@
+a,1,<class 'int'>
+b,a,<class 'str'>
+c,"[1, 2, 'a']",<class 'list'>
+d,"(1, 2)",<class 'tuple'>
