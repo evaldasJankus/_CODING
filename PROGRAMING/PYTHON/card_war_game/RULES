@@ -1,0 +1,16 @@
+"""
+CARD GAME 'WAR':
+(War game is implemented for N number of players. Game simulation is created,
+instead of waiting for players confirmation to draw a game)
+1) Each player draws a card, which has bigger card, takes all the cards and put
+the mat the end of the pile.
+2) If cards are draw, then each players draw a second cards, but before puts
+three cards facedown. Winner takes all.
+3) If draw repeats after second step, repeat second step until one of the card
+is bigger or until player any of the player has no cards left
+4) If during the draw phase, both players runs out of the cards at the same time,
+then both players are losers and cards are split to remaining players
+5) If during the draw phase, only one player is left with the cards and other
+players (who participate in draw phase) runs out of the cards, then this player
+is a winning of the draw phase
+"""
