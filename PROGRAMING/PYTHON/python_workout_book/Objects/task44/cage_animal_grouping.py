@@ -88,7 +88,7 @@ keys. Then, when adding new animals to the current cage, you’ll check for
 compatibility. Trying to add an animal to a cage that already contains an
 incompatible animal will raise an exception
 """
-
+# Implemented above
 
 
 if __name__ == '__main__':
