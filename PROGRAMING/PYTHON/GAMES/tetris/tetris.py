@@ -140,9 +140,11 @@ shape_colors = [(0, 255, 0), (255, 0, 0), (0, 255, 255), (255, 255, 0), (255, 16
 
 
 class Piece(object):
-    def __init__(self, x, y, shape):
-        self.x = x
-        self.y = y
+    rows = 20 # y
+    columns = 10 # x
+    def __init__(self, col, row, shape):
+        self.x = col
+        self.y = row
         self.shape = shape
         self.color = shape_colors[shapes.index(shape)]
         self.rotation = 0
@@ -211,20 +213,22 @@ def main(win):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-            if event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN:
                 if event.type == pygame.K_LEFT:
                     current_piece.x -= 1
                     if not(valid_space(current_piece, grid)):
                         current_piece.x +=1
-                if event.type == pygame.K_RIGHT:
+                elif event.type == pygame.K_RIGHT:
                     current_piece.x += 1
                     if not(valid_space(current_piece, grid)):
                         current_piece.x -=1
-                if event.type == pygame.K_DOWN:
+                elif event.type == pygame.K_DOWN:
+                    # Go down position
                     current_piece.y += 1
                     if not(valid_space(current_piece, grid)):
                         current_piece.y -=1
-                if event.type == pygame.K_UP:
+                elif event.type == pygame.K_UP:
+                    # Rotate shape
                     current_piece.rotation += 1
                     if not(valid_space(current_piece, grid)):
                         current_piece -=1
