@@ -23,6 +23,24 @@ def cheapest_fuel(rockets):
             results_line = line
     return fuel_expense, results_line
 
+# def get_fuel_expense3(line_number, dict_fuels):
+#     # print([abs(k - line_number) * dict_fuels[k] for k,v in dict_fuels])
+#     return sum([abs(k - line_number) * dict_fuels[k] for k in dict_fuels])
+#
+# def get_fuel_expense4(line_number, dict_fuels):
+#     return sum([sum([rock for rock in range(abs(k - line_number)+1)]) * dict_fuels[k] for k in dict_fuels])
+#
+# def cheapest_fuel(rockets):
+#     dict_fuels = {rocket:rockets.count(rocket) for rocket in set(rockets)}
+#     keys = list(set(rockets))
+#     fuel_expense = get_fuel_expense4(473, dict_fuels)
+#     max_line = 473
+#     # for line in keys[1:]:
+#     #     temp_fuel = get_fuel_expense4(line, dict_fuels)
+#     #     if temp_fuel < fuel_expense:
+#     #         fuel_expense = temp_fuel
+#     #         max_line = line
+#     return fuel_expense, max_line
 
 def main():
     fname = 'data'
