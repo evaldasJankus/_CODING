@@ -26,13 +26,16 @@ def filter_results_part2(fname):
     oxygen_generator_rating, co2_scrubber_rating = data_loaded[:], data_loaded[:]
 
     for x in range(len(data_loaded[0])):
-        temp = [item[x] for item in data_loaded]
+
+        # print(temp)
         if len(oxygen_generator_rating) > 1:
+            temp = [item[x] for item in oxygen_generator_rating]
             oxygen_generator_rating = [item for item in oxygen_generator_rating if int(item[x])] if temp.count('1') >= temp.count('0') else [item for item in oxygen_generator_rating if not int(item[x])]
             # print(temp.count('1'),',', temp.count('0'), '=>', oxygen_generator_rating)
         if len(co2_scrubber_rating) > 1:
+            temp = [item[x] for item in co2_scrubber_rating]
             co2_scrubber_rating = [item for item in co2_scrubber_rating if int(item[x])] if temp.count('1') < temp.count('0') else [item for item in co2_scrubber_rating if not int(item[x])]
-            print(temp.count('1'),',', temp.count('0'), '=>', co2_scrubber_rating)
+            # print(temp.count('1'),',', temp.count('0'), '=>', co2_scrubber_rating)
 
     life_support_rating = int(oxygen_generator_rating[0], base=2) * int(co2_scrubber_rating[0], base=2)
     print(f'oxygen_generator_rating: {oxygen_generator_rating}, co2_scrubber_rating: {co2_scrubber_rating}')
@@ -40,7 +43,9 @@ def filter_results_part2(fname):
     print(f'life_support_rating = {life_support_rating}')
 
 def main():
-    filter_results_part2('data')
+    file = 'data_example'
+    # filter_results_part1(file)
+    filter_results_part2(file)
 
 
 if __name__ == '__main__':
