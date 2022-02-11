@@ -21,7 +21,7 @@ def read_file_last_line(filename='data_text'):
             s += ch
         print(str(s[::-1],'utf-8'))
 
-    # Method 2 (readlines()[-1]) return last element of readline, but with ling files it is goign to be slow
+    # Method 2 (readlines()[-1]) return last element of readline, but with long files it is goign to be slow
     # Method (offered in the book, simply iterate through lines and print the last one)
 
 #-------------------------BEYOND THE TASK--------------------------------------
