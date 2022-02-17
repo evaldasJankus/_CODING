@@ -1,7 +1,7 @@
 import sys
 from random import choice
 
-DICE = ['1','2','3','4','5','6']
+DICE_WALLS = ['1','2','3','4','5','6']
 DICE_ART = {
     '1': (
         "┌─────────┐",
@@ -70,11 +70,11 @@ def manage_dices(all_dices):
 def main():
     all_dices = []
     number_of_dice = get_input() # Getting number 6 sided dices to roll
-    if  number_of_dice in DICE:
+    if  number_of_dice in DICE_WALLS:
         print(f'{("Rolling dices ["+number_of_dice+"]").center(25,"-")}')
         number_of_dice = int(number_of_dice)
         while number_of_dice:
-            all_dices.append(make_a_dice(roll_dice(DICE)))
+            all_dices.append(make_a_dice(roll_dice(DICE_WALLS)))
             number_of_dice -= 1
         else:
             all_dices = manage_dices(all_dices)
